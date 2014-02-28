@@ -13,7 +13,7 @@ gulp.task('scripts', function() {
 gulp.task('watch', function() {
   var server = livereload();
   gulp.watch('www/**').on('change', function(file) {
-  		gulp.run('scripts');
+      gulp.run('scripts');
       server.changed(file.path);
   });
 });

@@ -4,7 +4,7 @@
 		<list can-reorder="true">
 			<item class="item item-icon-left">
 				<i class="icon ion-arrow-graph-up-right"></i>				
-				1 Day Change				
+				1 Day Change	
 				<span class="badge badge-balanced">+0.19%</span>
 			</item>
 			<item class="item item-icon-left">
@@ -37,19 +37,12 @@
 			<h3>Movers</h3>
 		</div>
 		<div class="row padding centered text-large">
-		  <div class="col col-50 balanced"><strong><i class="icon ion-arrow-up-a"></i> Gainers</strong></div>
-		  <div class="col col-50 assertive"><strong><i class="icon ion-arrow-down-a"></i> Losers</strong></div>
-		</div>
-		<div class="row padding">
-		  <div class="col col-50"><button class="button button-block button-condensed button-balanced text-large" ng-click="myScorecard()">GOOG</button></div>
-		  <div class="col col-50"><button class="button button-block button-condensed button-assertive text-large" ng-click="myScorecard()">CTRX</button></div>
-		</div>
-		<div class="row padding">
-		  <div class="col col-50"><button class="button button-block button-condensed button-balanced text-large" ng-click="myScorecard()">MSFT</button></div>
-		  <div class="col col-50"><button class="button button-block button-condensed button-assertive text-large" ng-click="myScorecard()">AAPL</button></div>
-		</div>
-		<div class="row padding">
-		  <div class="col col-50 col-offset-50"><button class="button button-block button-condensed button-assertive text-large" ng-click="myScorecard()">NFLX</button></div>
+		  <div class="col col-50 balanced"><strong><i class="icon ion-arrow-up-a"></i> Gainers</strong>
+		  	<div class="padding-top" ng-repeat="gainer in stocks|filter:{status:'gainer'}" ><button class="button button-block button-condensed button-balanced text-large" ng-click="snapshot({{gainer.id}})">{{gainer.symbol}}</button></div>
+		  </div>
+		  <div class="col col-50 assertive"><strong><i class="icon ion-arrow-down-a"></i> Losers</strong>
+<div class="padding-top" ng-repeat="gainer in stocks|filter:{status:'loser'}" ><button class="button button-block button-condensed button-assertive text-large" ng-click="snapshot(gainer.id)">{{gainer.symbol}}</button></div>
+		  </div>
 		</div>
   </content>
 </view>
