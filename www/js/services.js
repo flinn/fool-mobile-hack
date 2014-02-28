@@ -37,7 +37,7 @@ angular.module('starter.services', [])
 }])
 .factory('DashboardService', function($document) {
   var dashboard_data = {
-    one_day_change: -.29,
+    one_day_change: .29,
     total_value: 4435.55,
     returns_total: 45.66,
     returns_vs_sp: 12.66,

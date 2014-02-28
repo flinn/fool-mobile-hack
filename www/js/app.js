@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', 'ngTouch'])
+angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', 'starter.directives', 'ngTouch'])
 .config(function($stateProvider, $urlRouterProvider) {  
   $stateProvider
     .state('login', {

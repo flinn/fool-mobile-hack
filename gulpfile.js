@@ -18,13 +18,14 @@ gulp.task('watch', function() {
   });
 });
 
+gulp.task('go', shell.task([
+		'ripple emulate --path www',
+]));
+
 gulp.task('install', shell.task([
 	'npm install',
   'npm install -g flinn/flimulator',
   'ripple emulate --path www',
   'echo AIGHT. Start Hacking!'
 ]));
-
-gulp.task('go', shell.task([
-	'ripple emulate --path www'
-]));
+	
