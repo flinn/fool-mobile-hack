@@ -5,7 +5,7 @@
 			<item class="item item-icon-left">
 				<i class="icon ion-arrow-graph-up-right"></i>				
 				1 Day Change	
-				<posnegbadge value="{{data.one_day_change}}"></posnegbadge>
+				<pos-neg-badge value="{{data.one_day_change}}"></pos-neg-badge>
 			</item>
 			<item class="item item-icon-left">
 				<i class="icon ion-speedometer"></i>
@@ -17,17 +17,17 @@
 			<item class="item item-icon-left">
 				<i class="icon ion-refresh"></i>
 				Total Returns
-				<span class="item-note balanced"><b>{{data.returns_total}}%</b></span>
+				<pos-neg-percent value="{{data.returns_total}}"></pos-neg-percent>
 			</item>
 			<item class="item item-icon-left">
 				<i class="icon ion-shuffle"></i>
 				vs. S&P
-				<span class="item-note balanced"><b>{{data.returns_vs_sp}}%</b></span>
+				<pos-neg-percent value="{{data.returns_vs_sp}}"></pos-neg-percent>
 			</item>
 			<item class="item item-icon-left">
 				<i class="icon ion-android-alarm"></i>
 				Annualized
-				<span class="item-note dark"><b>45.66%</b></span>
+				<pos-neg-percent value="{{data.returns_annualized}}"></pos-neg-percent>
 			</item>
 		</list>
 		<div class="padding">
