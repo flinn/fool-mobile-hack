@@ -1,0 +1,20 @@
+<tabs tabs-style="tabs-icon-top" tabs-type="tabs-default">
+  <!-- 
+    This is an abstract state for tabs, the nested state (or tab's) templates exist in the "/stock" folder.
+  -->
+  <!-- Details Tab -->
+  <tab icon="icon padding-top ion-eye" href="#/stock/detail/{{stock.id}}">    
+    <nav-view name="stock-detail"></nav-view>
+  </tab>
+
+  <!-- News Tab -->
+  <tab icon="icon padding-top ion-android-book" href="#/stock/news/{{stock.id}}">    
+    <nav-view name="stock-news"></nav-view>
+  </tab>
+
+  <!-- Chart Tab -->
+  <tab icon="icon padding-top ion-pie-graph" href="#/stock/chart/{{stock.id}}">    
+    <nav-view name="stock-chart"></nav-view>
+  </tab>
+
+</tabs>

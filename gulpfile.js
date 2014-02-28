@@ -1,11 +1,20 @@
 var gulp  = require('gulp');
 var shell = require('gulp-shell');
 var concat = require('gulp-concat');
+var watch = require('gulp-watch');
+var livereload = require('gulp-livereload');
 
 gulp.task('scripts', function() {
   gulp.src('./www/js/*.js')
-    .pipe(concat('app.js'))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(concat('foolmobile.js'))
+    .pipe(gulp.dest('./www/jsbin/'))
+});
+
+gulp.task('watch', function() {
+  var server = livereload();
+  gulp.watch('www/**').on('change', function(file) {
+      server.changed(file.path);
+  });
 });
 
 gulp.task('install', shell.task([
@@ -16,5 +25,5 @@ gulp.task('install', shell.task([
 ]));
 
 gulp.task('go', shell.task([
-	'ripple emulate --path www',
+	'ripple emulate --path www'
 ]));
