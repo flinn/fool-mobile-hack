@@ -5,4 +5,4 @@ platforms/^.*
 plugins
 node_modules
 bin/*
-www/jsbin/*
+www/jsbin

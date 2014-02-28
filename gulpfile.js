@@ -19,10 +19,10 @@ gulp.task('watch', function() {
 });
 
 gulp.task('go', function() {
-	gulp.run('watch')
 	shell.task([
 		'ripple emulate --path www',
 	]);
+  gulp.run('watch');
 });
 
 gulp.task('install', shell.task([
