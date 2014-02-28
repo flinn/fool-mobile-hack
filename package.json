@@ -1,0 +1,14 @@
+{
+  "name": "fool-mobile",
+  "version": "0.1.0",
+  "description": "Hackathon Project",
+  "main": "README.md",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "Matt Flinn",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "gulp": "~3.5.2"
+  }
+}
