@@ -20,11 +20,17 @@ angular.module('starter.controllers', [])
   }
 
 })
-.controller('DashboardCtrl', function($scope, $state) {
+.controller('DashboardCtrl', function($scope, $state, StockService) {
 	
+  $scope.stocks =  StockService.all();
+
 	$scope.myScorecard = function() {
 		$state.go('scorecard');
 	}
+
+  $scope.snapshot  = function(ticker) {
+    $state.go('stock.detail', { stockId: ticker })
+  }
 
 	$scope.onRefresh = function() {
 		console.log("Refreshed!");
@@ -33,7 +39,7 @@ angular.module('starter.controllers', [])
 		}, 2000);
 	}
 
-	$scope.toLogin = [
+	$scope.leftButtons = [
     { 
       type: 'button-dark',
       content: '<i class="icon ion-unlocked"></i>',
