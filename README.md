@@ -4,16 +4,18 @@ Fool Mobile - Hackathon Project
 Requirements
 ------------
 
--Node
+-	Node
 
--Ionic Framework (npm install -g ionic)
+-	Ionic Framework (npm install -g ionic)
 
--Gulp (npm install -g gulp)
+-	Gulp (npm install -g gulp)
 
 Getting Started
 ---------------
 
--Install gulp(https://github.com/gulpjs/gulp).
+-	.
 
 Documentation
 -------------
+
+-	Gulp Documentation(https://github.com/gulpjs/gulp)
