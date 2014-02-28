@@ -35,10 +35,19 @@ angular.module('starter.services', [])
     getTitle : provideNewTitle
   };
 }])
-.factory('MikesService', function($document) {
+.factory('DashboardService', function($document) {
+  var dashboard_data = {
+    one_day_change: .29,
+    total_value: 4435.55,
+    returns_total: 45.66,
+    returns_vs_sp: 12.66,
+    returns_annualized: 1.44
+  };
+
   return {
-    message: function() {
-      return 'Mikes Service';
-    }
+    data: function() {
+      return dashboard_data;
+    },
+
   }
 });
