@@ -1,6 +1,39 @@
+<style>
+.hack {
+color:#FFF; 
+position: absolute;
+text-align: center;
+left:0;
+width: 100%;
+}
+.hack h1 {
+border: 2px solid white;
+padding:20px;
+margin:50px 60px;
+color: white;
+}
+</style>
 <view title="stock.title" left-buttons="leftButtons">
   <content has-header="true" has-tabs="false" padding="true">
-  	<h1>{{ stock.symbol }}</h1>
-    <p>{{ stock.description }}</p>
+  	<div class="row">
+  		<img style="width:100%" src="img/company_bg.png"/>
+  		<div class="hack">
+  			<h1>{{ stock.symbol }}</h1>
+  		</div>
+  	</div>
+  	<div class="row">
+	    <p>{{ stock.description }}</p>
+	</div>
+	<div class="row">
+		{{stock.exchange}}:{{stock.symbol}}
+	</div>
+	<div class="row">
+		<div class="col col-50">
+			{{ stock.current_price | currency:"$" }}
+		</div>
+		<div class="col col-50">
+			<pos-neg-percent value="{{stock.daily_change}}"></pos-neg-percent>
+		</div>
+	</div>
   </content>
 </view>
