@@ -2,11 +2,11 @@ angular.module('starter.services', [])
 .factory('StockService', function() {
   
   var stocks = [
-    { status: 'gainer', id: 0, title: 'Starbucks', symbol: 'SBUX', description: 'Starbucks Corporation is a roaster, marketer and retailer of coffee operating in 60 countries.' },
-    { status: 'loser', id: 1, title: 'Tesla', symbol: 'TSLA', description: 'Tesla Motors, Inc. (Tesla) designs, develops, manufactures and sells electric vehicles and advanced electric vehicle powertrain components.' },
-    { status: 'gainer', id: 2, title: 'Apple', symbol: 'AAPL', description: 'Apple Inc. (Apple) designs, manufactures and markets mobile communication and media devices, personal computers, and portable digital music players, and a variety of related software, services, peripherals, networking solutions, and third-party digital content and applications.' },
-    { status: 'gainer', id: 3, title: 'Google', symbol: 'GOOG', description: 'Google Inc. (Google), incorporated on October 22, 2002, is a global technology company.' },
-    { status: 'loser', id: 4, title: 'Micrsoft', symbol: 'MSFT', description: 'Microsoft Corporation is engaged in developing, licensing and supporting a range of software products and services.' }
+    { daily_change: 4.1, current_price: 5.50, status: 'gainer', id: 0, title: 'Starbucks', exchange: 'NASDAQ', symbol: 'SBUX', description: 'Starbucks Corporation is a roaster, marketer and retailer of coffee operating in 60 countries.' },
+    { daily_change: 10, current_price: 5.50, status: 'loser', id: 1, title: 'Tesla', exchange: 'NASDAQ', symbol: 'TSLA', description: 'Tesla Motors, Inc. (Tesla) designs, develops, manufactures and sells electric vehicles and advanced electric vehicle powertrain components.' },
+    { daily_change: -2.6, current_price: 5.50, status: 'gainer', id: 2, title: 'Apple', exchange: 'NASDAQ', symbol: 'AAPL', description: 'Apple Inc. (Apple) designs, manufactures and markets mobile communication and media devices, personal computers, and portable digital music players, and a variety of related software, services, peripherals, networking solutions, and third-party digital content and applications.' },
+    { daily_change: -14.2, current_price: 5.50, status: 'gainer', id: 3, title: 'Google', exchange: 'NASDAQ', symbol: 'GOOG', description: 'Google Inc. (Google), incorporated on October 22, 2002, is a global technology company.' },
+    { daily_change: .33, current_price: 5.50, status: 'loser', id: 4, title: 'Micrsoft', exchange: 'NASDAQ', symbol: 'MSFT', description: 'Microsoft Corporation is engaged in developing, licensing and supporting a range of software products and services.' }
   ];
 
   return {
