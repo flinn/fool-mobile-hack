@@ -1,6 +1,7 @@
-ionic-angular-cordova-seed
+Fool Mobile - Hackathon Project
 ==========================
 
-The perfect starting point for an Ionic project.
 
-- [Ionic Tutorials](http://ionicframework.com/tutorials/)
+==Getting Started==
+
+-Install gulp(https://github.com/gulpjs/gulp).
