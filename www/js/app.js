@@ -1,69 +1,66 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
-
-
-.config(function($stateProvider, $urlRouterProvider) {
-
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
+angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', 'ngTouch'])
+.config(function($stateProvider, $urlRouterProvider) {  
   $stateProvider
-
-    // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl'
+    })
+    .state('dashboard', {
+      url: '/dashboard',
+      templateUrl: 'templates/dashboard.html',
+      controller: 'DashboardCtrl'
+    })
+    .state('scorecard', {
+      url: '/scorecard',
+      templateUrl: 'templates/scorecard.html',
+      controller: 'ScorecardCtrl'
+    })
+    .state('stock', {
+      url: '/stock',
       abstract: true,
-      templateUrl: "templates/tabs.html"
+      templateUrl: 'templates/stock.html'
     })
-
-    // the pet tab has its own child nav-view and history
-    .state('tab.pet-index', {
-      url: '/pets',
+    .state('stock.detail', {
+      url: '/detail/:stockId',
       views: {
-        'pets-tab': {
-          templateUrl: 'templates/pet-index.html',
-          controller: 'PetIndexCtrl'
+        'stock-detail': {
+          templateUrl: 'templates/stock/detail.html',
+          controller: 'StockCtrl'
         }
       }
     })
-
-    .state('tab.pet-detail', {
-      url: '/pet/:petId',
+    .state('stock.news', {
+      url: '/news/:stockId',
       views: {
-        'pets-tab': {
-          templateUrl: 'templates/pet-detail.html',
-          controller: 'PetDetailCtrl'
-        }
+        'stock-news': {
+          templateUrl: 'templates/stock/news.html',
+          controller: 'StockNewsCtrl',
+          resolve : {
+            pageTitle : function(TitleService) {
+              return TitleService.getTitle()
+            }
+          }
+        },
       }
     })
-
-    .state('tab.adopt', {
-      url: '/adopt',
+    .state('stock.chart', {
+      url: '/chart/:stockId',
       views: {
-        'adopt-tab': {
-          templateUrl: 'templates/adopt.html'
-        }
-      }
-    })
-
-    .state('tab.about', {
-      url: '/about',
-      views: {
-        'about-tab': {
-          templateUrl: 'templates/about.html'
+        'stock-chart': {
+          templateUrl: 'templates/stock/chart.html',
+          controller: 'StockChartCtrl', 
+          resolve : {
+            pageTitle : function(TitleService) {
+              return TitleService.getTitle()
+            }
+          }
         }
       }
     });
 
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/pets');
-
+  $urlRouterProvider.otherwise('/login');
 });
 
+        
+        

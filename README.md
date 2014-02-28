@@ -11,7 +11,8 @@ Requirements
 Getting Started
 ---------------
 
--	.
+-	gulp install
+-	npm install 
 
 Documentation
 -------------

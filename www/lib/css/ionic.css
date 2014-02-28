@@ -2,7 +2,7 @@
  * Copyright 2014 Drifty Co.
  * http://drifty.com/
  *
- * Ionic, v0.9.26
+ * Ionic, v0.9.24
  * A powerful HTML5 mobile app framework.
  * http://ionicframework.com/
  *
@@ -14,7 +14,7 @@
 /*!
   Ionicons, v#{$ionicons-version}
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
-  https://twitter.com/benjsperry  https://twitter.com/ionicframework
+  https://twitter.com/helloimben  https://twitter.com/ionicframework
   MIT License: https://github.com/driftyco/ionicons
 */
 @font-face {
@@ -1953,7 +1953,7 @@ table {
 a {
   -webkit-user-drag: none;
   -webkit-tap-highlight-color: transparent; }
-  a[href]:hover {
+  a:hover {
     cursor: pointer; }
 
 img {
@@ -1963,6 +1963,7 @@ body, .ionic-body {
   -webkit-touch-callout: none;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
   -webkit-text-size-adjust: none;
   -moz-text-size-adjust: none;
   text-size-adjust: none;
@@ -1986,31 +1987,29 @@ body, .ionic-body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 20px;
   text-rendering: optimizeLegibility;
-  -webkit-backface-visibility: hidden;
   -webkit-user-drag: none; }
-
-body.grade-b, body.grade-c {
-  text-rendering: auto; }
 
 .content {
   position: relative; }
 
 .scroll-content {
-  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  position: absolute;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
   margin-top: -1px;
   width: auto;
   height: auto; }
 
 .scroll-view {
-  position: relative;
+  height: 100%;
   overflow: hidden;
-  margin-top: -1px;
-  height: 100%; }
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  margin-top: -1px; }
 
 /**
  * Scroll is the scroll view component available for complex and custom
@@ -2041,25 +2040,25 @@ body.grade-b, body.grade-c {
   visibility: hidden; }
 
 .scroll-bar-h {
-  right: 2px;
-  bottom: 3px;
+  height: 3px;
   left: 2px;
-  height: 3px; }
+  right: 2px;
+  bottom: 3px; }
   .scroll-bar-h .scroll-bar-indicator {
     height: 100%; }
 
 .scroll-bar-v {
-  top: 2px;
-  right: 3px;
+  width: 3px;
   bottom: 2px;
-  width: 3px; }
+  top: 2px;
+  right: 3px; }
   .scroll-bar-v .scroll-bar-indicator {
     width: 100%; }
 
 .scroll-bar-indicator {
   position: absolute;
-  border-radius: 4px;
   background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
   opacity: 1; }
   .scroll-bar-indicator.scroll-bar-fade-out {
     -webkit-transition: opacity 0.3s linear;
@@ -2067,45 +2066,37 @@ body.grade-b, body.grade-c {
     transition: opacity 0.3s linear;
     opacity: 0; }
 
-.grade-b .scroll-bar-indicator, .grade-c .scroll-bar-indicator {
-  border-radius: 0;
-  background: #aaa; }
-  .grade-b .scroll-bar-indicator.scroll-bar-fade-out, .grade-c .scroll-bar-indicator.scroll-bar-fade-out {
-    -webkit-transition: none;
-    -moz-transition: none;
-    transition: none; }
-
 .scroll-refresher {
-  position: absolute;
-  top: -60px;
-  right: 0;
-  left: 0;
   overflow: hidden;
-  margin: auto;
-  height: 60px; }
+  top: -60px;
+  height: 60px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: auto; }
   .scroll-refresher .icon-refreshing {
+    display: none;
     -webkit-animation-duration: 1.5s;
     -moz-animation-duration: 1.5s;
-    animation-duration: 1.5s;
-    display: none; }
+    animation-duration: 1.5s; }
 
 .scroll-refresher-content {
   position: absolute;
-  bottom: 15px;
   left: 0;
+  bottom: 15px;
   width: 100%;
-  color: #666666;
   text-align: center;
-  font-size: 30px; }
+  font-size: 30px;
+  color: #666666; }
 
 .ionic-refresher-content {
   position: absolute;
-  bottom: 15px;
   left: 0;
+  bottom: 15px;
   width: 100%;
-  color: #666666;
   text-align: center;
-  font-size: 30px; }
+  font-size: 30px;
+  color: #666666; }
   .ionic-refresher-content .icon-pulling {
     -webkit-animation-duration: 200ms;
     -moz-animation-duration: 200ms;
@@ -2144,22 +2135,22 @@ body.grade-b, body.grade-c {
   -moz-animation-name: refresh-spin;
   animation-name: refresh-spin; }
 
-ion-infinite-scroll .scroll-infinite {
-  position: relative;
+infinite-scroll .scroll-infinite {
   overflow: hidden;
   margin-top: -70px;
-  height: 60px; }
+  height: 60px;
+  position: relative; }
 
 .scroll-infinite-content {
   position: absolute;
-  bottom: 15px;
   left: 0;
+  bottom: 15px;
   width: 100%;
-  color: #666666;
   text-align: center;
-  font-size: 30px; }
+  font-size: 30px;
+  color: #666666; }
 
-ion-infinite-scroll.active .scroll-infinite {
+infinite-scroll.active .scroll-infinite {
   margin-top: -30px; }
 
 .overflow-scroll {
@@ -2191,23 +2182,24 @@ ion-infinite-scroll.active .scroll-infinite {
   bottom: 49px; }
 
 .pane {
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  position: absolute;
   z-index: 1; }
 
 .view {
+  position: absolute;
   z-index: 1; }
 
 .pane, .view {
-  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff; }
+  background-color: #fff;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
 
 /**
  * Typography
@@ -2235,7 +2227,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
   font-weight: 500;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  line-height: 1.2; }
+  line-height: 1.1; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     font-weight: normal;
     line-height: 1; }
@@ -2358,7 +2350,7 @@ a.subdued {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 11;
+  z-index: 10;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0); }
@@ -2446,7 +2438,7 @@ a.subdued {
   margin-left: 15px;
   margin-right: 15px;
   width: auto;
-  z-index: 11;
+  z-index: 10;
   overflow: hidden; }
   .action-sheet .button {
     display: block;
@@ -2483,13 +2475,6 @@ a.subdued {
   .action-sheet-group .button:first-child:last-child {
     border-width: 0; }
 
-.action-sheet-open {
-  pointer-events: none; }
-  .action-sheet-open.modal-open .modal {
-    pointer-events: none; }
-  .action-sheet-open .action-sheet {
-    pointer-events: auto; }
-
 /**
  * Bar (Headers and Footers)
  * --------------------------------------------------
@@ -2501,9 +2486,6 @@ a.subdued {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2652,8 +2634,6 @@ a.subdued {
       .bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {
         font-size: 32px;
         line-height: 32px; }
-    .bar .button.back-button:active, .bar .button.back-button.active {
-      opacity: 1; }
   .bar .button-bar > .button, .bar .buttons > .button {
     min-height: 31px;
     line-height: 32px; }
@@ -2899,9 +2879,6 @@ a.subdued {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
   background-color: #f8f8f8;
   background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
   border-color: #b2b2b2;
@@ -3025,8 +3002,6 @@ a.subdued {
   font-size: 14px;
   font-family: "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   opacity: 0.7; }
-  .tab-item:hover {
-    cursor: pointer; }
 
 .tabs-icon-top .tab-item, .tabs-icon-bottom .tab-item {
   font-size: 12px;
@@ -3119,20 +3094,7 @@ a.subdued {
   background-color: #fff; }
 
 .menu-content {
-  -webkit-transform: none;
-  -moz-transform: none;
-  transform: none;
   box-shadow: -1px 0px 2px rgba(0, 0, 0, 0.2), 1px 0px 2px rgba(0, 0, 0, 0.2); }
-
-.grade-b .menu-content, .grade-c .menu-content {
-  right: -1px;
-  left: -1px;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  border-right: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  box-shadow: none; }
 
 .menu-left {
   left: 0; }
@@ -3164,11 +3126,6 @@ a.subdued {
   opacity: 0; }
   .modal.active {
     height: 100%; }
-
-.modal-open {
-  pointer-events: none; }
-  .modal-open .modal {
-    pointer-events: auto; }
 
 /**
  * Popups
@@ -3506,10 +3463,10 @@ a.item-content {
  * By default, if an .item is created out of an <a> or <button>
  * then a arrow will be added to the right side of the item.
  */
-a.item, button.item, .item a[href].item-content, .item[ng-click] a.item-content {
+a.item, button.item {
   padding-right: 40px; }
 
-a.item:after, button.item:after, .item a[href].item-content:after, .item[ng-click] a.item-content:after {
+a.item:after, button.item:after {
   /* By default, both <a> and <button> have right side arrow icons */
   display: -webkit-box;
   display: -webkit-flex;
@@ -3539,13 +3496,7 @@ a.item:after, button.item:after, .item a[href].item-content:after, .item[ng-clic
   line-height: 1;
   speak: none; }
 
-.grade-b a.item:after, .grade-b button.item:after, .grade-b .item a[href].item-content:after, .grade-b .item[ng-click] a.item-content:after, .grade-c a.item:after, .grade-c button.item:after, .grade-c .item a[href].item-content:after, .grade-c .item[ng-click] a.item-content:after {
-  -webkit-font-smoothing: none;
-  font-smoothing: none;
-  content: '>';
-  font-family: 'monospace'; }
-
-a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after, button.item-button-right:after, .item a.item-content:after {
+a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after, button.item-button-right:after {
   display: none; }
 
 .item-avatar {
@@ -3560,10 +3511,10 @@ a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after
     width: 100%;
     border-radius: 4px; }
 
-.item-thumbnail-left, .item-thumbnail-left .item-content {
+.item-thumbnail-left {
   padding-left: 105px;
   min-height: 100px; }
-  .item-thumbnail-left > img:first-child, .item-thumbnail-left > .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-content > .item-image {
+  .item-thumbnail-left > img:first-child, .item-thumbnail-left > .item-image {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -3571,22 +3522,16 @@ a.item-icon-right:after, button.item-icon-right:after, a.item-button-right:after
     max-height: 80px;
     width: 100%; }
 
-.item-thumbnail-left.item-complex {
-  padding-left: 0; }
-
-.item-thumbnail-right, .item-thumbnail-right .item-content {
+.item-thumbnail-right {
   padding-right: 105px;
   min-height: 100px; }
-  .item-thumbnail-right > img:first-child, .item-thumbnail-right > .item-image, .item-thumbnail-right .item-content > img:first-child, .item-thumbnail-right .item-content > .item-image {
+  .item-thumbnail-right > img:first-child, .item-thumbnail-right > .item-image {
     position: absolute;
     top: 10px;
     right: 10px;
     max-width: 80px;
     max-height: 80px;
     width: 100%; }
-
-.item-thumbnail-left.item-complex {
-  padding-right: 0; }
 
 .item-image {
   padding: 0;
@@ -4099,10 +4044,6 @@ input, button, select, textarea {
 
 .placeholder-icon {
   color: #aaa; }
-  .placeholder-icon:first-child {
-    padding-right: 6px; }
-  .placeholder-icon:last-child {
-    padding-left: 6px; }
 
 .item-stacked-label {
   display: block;
@@ -4533,13 +4474,6 @@ input[type="range"] {
     background-color: #e5e5e5;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
     border-color: #a2a2a2; }
-  .button:after {
-    position: absolute;
-    top: -6px;
-    right: -8px;
-    bottom: -6px;
-    left: -8px;
-    content: ' '; }
   .button .icon {
     vertical-align: top; }
   .button .icon:before, .button.icon:before, .button.icon-left:before, .button.icon-right:before {
@@ -4882,7 +4816,11 @@ input[type="range"] {
   display: block;
   clear: both; }
   .button-block:after {
-    clear: both; }
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: "."; }
 
 .button-full, .button-full > .button {
   display: block;
@@ -4984,33 +4922,7 @@ a.button {
     transform: translate3d(0, 0, 0);
     opacity: 1; } }
 
-@-moz-keyframes slideInUp {
-  0% {
-    -webkit-transform: translate3d(0, 100%, 0);
-    -moz-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-    opacity: 0; }
-
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    opacity: 1; } }
-
 @-webkit-keyframes slideOutUp {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    opacity: 1; }
-
-  100% {
-    -webkit-transform: translate3d(0, 100%, 0);
-    -moz-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-    opacity: 0; } }
-
-@-moz-keyframes slideOutUp {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
@@ -5866,21 +5778,11 @@ a.button {
  * Utility Classes
  * --------------------------------------------------
  */
-.hide {
-  display: none; }
-
-.opacity-hide {
-  opacity: 0; }
-
-.grade-b .opacity-hide, .grade-c .opacity-hide {
-  opacity: 1;
+.hidden, .hide {
   display: none; }
 
 .show {
   display: block; }
-
-.opacity-show {
-  opacity: 1; }
 
 .invisible {
   visibility: hidden; }
@@ -5898,18 +5800,6 @@ a.button {
 
 .enable-pointer-events {
   pointer-events: auto; }
-
-.disable-user-behavior {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-drag: none;
-  -ms-touch-action: none;
-  -ms-content-zooming: none; }
 
 .block {
   display: block;
@@ -6052,25 +5942,25 @@ a.button {
  * --------------------------------------------------
  * Platform specific tweaks when in Cordova.
  */
-.platform-ios7.platform-cordova:not(.fullscreen) .bar-header {
+.platform-ios7:not(.fullscreen) .bar-header {
   height: 64px; }
-  .platform-ios7.platform-cordova:not(.fullscreen) .bar-header.item-input-inset .item-input-wrapper {
+  .platform-ios7:not(.fullscreen) .bar-header.item-input-inset .item-input-wrapper {
     margin-top: 19px !important; }
-  .platform-ios7.platform-cordova:not(.fullscreen) .bar-header > * {
+  .platform-ios7:not(.fullscreen) .bar-header > * {
     margin-top: 20px; }
-.platform-ios7.platform-cordova:not(.fullscreen) .has-header, .platform-ios7.platform-cordova:not(.fullscreen) .bar-subheader {
+.platform-ios7:not(.fullscreen) .has-header, .platform-ios7:not(.fullscreen) .bar-subheader {
   top: 64px; }
-.platform-ios7.platform-cordova:not(.fullscreen) .has-subheader {
+.platform-ios7:not(.fullscreen) .has-subheader {
   top: 108px; }
 
 .platform-ios7.status-bar-hide {
   margin-bottom: 20px; }
 
-.platform-android.platform-cordova .bar-header {
+.platform-android .bar-header {
   height: 48px; }
-.platform-android.platform-cordova .has-header, .platform-android.platform-cordova .bar-subheader {
+.platform-android .has-header, .platform-android .bar-subheader {
   top: 48px; }
-.platform-android.platform-cordova .has-subheader {
+.platform-android .has-subheader {
   top: 96px; }
-.platform-android.platform-cordova .title {
+.platform-android .title {
   line-height: 48px; }

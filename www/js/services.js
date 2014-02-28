@@ -1,26 +1,37 @@
 angular.module('starter.services', [])
-
-/**
- * A simple example service that returns some data.
- */
-.factory('PetService', function() {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
-  var pets = [
-    { id: 0, title: 'Cats', description: 'Furry little creatures. Obsessed with plotting assassination, but never following through on it.' },
-    { id: 1, title: 'Dogs', description: 'Lovable. Loyal almost to a fault. Smarter than they let on.' },
-    { id: 2, title: 'Turtles', description: 'Everyone likes turtles.' },
-    { id: 3, title: 'Sharks', description: 'An advanced pet. Needs millions of gallons of salt water. Will happily eat you.' }
+.factory('StockService', function() {
+  
+  var stocks = [
+    { id: 0, title: 'Starbucks', symbol: 'SBUX', description: 'Starbucks Corporation is a roaster, marketer and retailer of coffee operating in 60 countries.' },
+    { id: 1, title: 'Tesla', symbol: 'TSLA', description: 'Tesla Motors, Inc. (Tesla) designs, develops, manufactures and sells electric vehicles and advanced electric vehicle powertrain components.' },
+    { id: 2, title: 'Apple', symbol: 'AAPL', description: 'Apple Inc. (Apple) designs, manufactures and markets mobile communication and media devices, personal computers, and portable digital music players, and a variety of related software, services, peripherals, networking solutions, and third-party digital content and applications.' },
+    { id: 3, title: 'Google', symbol: 'GOOG', description: 'Google Inc. (Google), incorporated on October 22, 2002, is a global technology company.' },
+    { id: 4, title: 'Micrsoft', symbol: 'MSFT', description: 'Microsoft Corporation is engaged in developing, licensing and supporting a range of software products and services.' }
   ];
 
   return {
     all: function() {
-      return pets;
+      return stocks;
     },
-    get: function(petId) {
+    get: function(stockId) {
       // Simple index lookup
-      return pets[petId];
+      return stocks[stockId];
     }
   }
-});
+})
+.factory('TitleService', [ '$q','$timeout', function($q, $timeout) {
+  
+  var provideNewTitle = function() {
+    var deferred = $q.defer();
+    
+    $timeout( function() {
+      deferred.resolve('Title From Service');
+    });
+    
+    return deferred.promise;
+  };
+  
+  return {
+    getTitle : provideNewTitle
+  };
+}]);
