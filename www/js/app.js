@@ -6,60 +6,66 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', '
       templateUrl: 'templates/login.html',
       controller: 'LoginCtrl'
     })
-    .state('dashboard', {
-      url: '/dashboard',
-      templateUrl: 'templates/dashboard.html',
-      controller: 'DashboardCtrl'
-    })
-    .state('scorecard', {
-      url: '/scorecard',
-      templateUrl: 'templates/scorecard.html',
-      controller: 'ScorecardCtrl'
-    })
-    .state('stock', {
-      url: '/stock',
+    .state('app', {
+      url: "/app",
       abstract: true,
-      templateUrl: 'templates/stock.html'
+      templateUrl: "templates/appnav.html"
     })
-    .state('stock.detail', {
-      url: '/detail/:stockId',
+    .state('app.dashboard', {
+      url: '/dashboard',
       views: {
-        'stock-detail': {
-          templateUrl: 'templates/stock/detail.html',
-          controller: 'StockCtrl'
+       'appContent': {
+          templateUrl: 'templates/dashboard.html',
+          controller: 'DashboardCtrl'
         }
       }
     })
-    .state('stock.news', {
-      url: '/news/:stockId',
+    .state('app.scorecard', {
+      url: '/scorecard',
       views: {
-        'stock-news': {
-          templateUrl: 'templates/stock/news.html',
-          controller: 'StockNewsCtrl',
-          resolve : {
-            pageTitle : function(TitleService) {
-              return TitleService.getTitle()
-            }
-          }
-        },
+        'appContent': {
+          templateUrl: 'templates/scorecard.html',
+          controller: 'ScorecardCtrl'
+        }
       }
     })
-    .state('stock.chart', {
-      url: '/chart/:stockId',
+    .state('app.stock', {
+      url: '/stock/:stockId',
       views: {
-        'stock-chart': {
-          templateUrl: 'templates/stock/chart.html',
-          controller: 'StockChartCtrl', 
-          resolve : {
-            pageTitle : function(TitleService) {
-              return TitleService.getTitle()
-            }
-          }
+        'appContent': {
+          templateUrl: 'templates/stock.html',
+          controller: 'StockCtrl'
         }
       }
     });
 
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/app/dashboard');
+
+}).run(function($rootScope, $state) {
+  $rootScope.toggleMenu = function() {
+    var $content = $('.menu-content');
+    if( $content.hasClass('inactive') ) {
+      $content.removeClass('inactive');
+    } else {
+      $content.addClass('inactive');
+    }
+  };
+  
+  $rootScope.go = function(path) {
+    console.log('go',path);
+    $state.go(path);
+  };
+  
+  $rootScope.menuButton = [
+    {
+      type: 'button-dark',
+      content: '<i class="icon ion-navicon nav-jester"></i>',
+      tap: function(e) {
+        //<i class="icon ion-navicon"></i>
+        $rootScope.toggleMenu();
+      }
+    }
+  ];
 });
 
         

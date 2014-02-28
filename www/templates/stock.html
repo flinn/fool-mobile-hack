@@ -1,20 +1,51 @@
 <tabs tabs-style="tabs-icon-top" tabs-type="tabs-default">
-  <!-- 
-    This is an abstract state for tabs, the nested state (or tab's) templates exist in the "/stock" folder.
-  -->
-  <!-- Details Tab -->
+  
   <tab icon="icon padding-top ion-eye" ng-click="chart({{stockId}})">    
-    <nav-view name="stock-detail"></nav-view>
+    <style>
+    .hack {
+    color:#FFF; 
+    position: absolute;
+    text-align: center;
+    left:0;
+    width: 100%;
+    }
+    .hack h1 {
+    border: 2px solid white;
+    padding:20px;
+    margin:50px 60px;
+    color: white;
+    }
+    </style>
+    <view title="stock.title" left-buttons="leftButtons">
+      <content has-header="true" has-tabs="false" padding="true">
+        <div class="row">
+          <img style="width:100%" src="img/company_bg.png"/>
+          <div class="hack">
+            <h1>{{ stock.symbol }}</h1>
+          </div>
+        </div>
+        <div class="row">
+          <p>{{ stock.description }}</p>
+      </div>
+      <div class="row">
+        {{stock.exchange}}:{{stock.symbol}}
+      </div>
+      <div class="row">
+        <div class="col col-50">
+          {{ stock.current_price | currency:"$" }}
+        </div>
+        <div class="col col-50">
+          <pos-neg-percent value="{{stock.daily_change}}"></pos-neg-percent>
+        </div>
+      </div>
+      </content>
+    </view>
   </tab>
-
-  <!-- News Tab -->
   <tab icon="icon padding-top ion-android-book" ng-click="chart({{stockId}})">    
-    <nav-view name="stock-news"></nav-view>
+    <nav-view name="stockView"></nav-view>
   </tab>
-
-  <!-- Chart Tab -->
   <tab icon="icon padding-top ion-pie-graph" ng-click="chart({{stockId}})"   
-    <nav-view name="stock-chart"></nav-view>
+    <nav-view name="stockView"></nav-view>
   </tab>
 
 </tabs>

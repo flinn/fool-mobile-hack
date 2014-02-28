@@ -5,16 +5,12 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Ionic Seed App</title>
 
-    <!-- Open Sans Font -->
+    <!-- Stizzylez -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
-    <!-- Font Awesome -->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <!-- ionic css -->
     <link href="lib/css/ionic.css" rel="stylesheet">
-    <!--jQuery References--> 
-    
     <link href="css/app.css" rel="stylesheet">
-
+    <!-- JavaScript Goodies -->
     <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>    
     <script src="lib/js/ionic.js"></script>
     <script src="lib/js/angular/angular.js"></script>
@@ -30,16 +26,10 @@
     'starter' is the name of this angular module (js/app.js)
   -->
   <body ng-app="starter" animation="slide-left-right-ios7">
-    <nav-bar type="bar-dark" 
-             animation="nav-title-slide-ios7"></nav-bar>
-    <nav-view></nav-view>
-
-    <side-menus>
-      <pane side-menu-content>
-      </pane>
-      <side-menu side="right">
-      </side-menu>
-    </side-menus>
+    
+    <div ng-controller="MainCtrl">       
+      <nav-view></nav-view>
+    </div>
     
   </body>
 </html>

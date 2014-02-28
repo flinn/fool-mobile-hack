@@ -1,4 +1,4 @@
-<view title="'Dashboard'" left-buttons="leftButtons">
+<view title="'Dashboard'" left-buttons="menuButton">
   <content has-header="true" on-refresh="onRefresh()" class="body">
   	<refresher></refresher>
 		<list can-reorder="true">
@@ -31,7 +31,7 @@
 			</item>
 		</list>
 		<div class="padding">
-			<button style="margin-top: -20px;" class="button button-block button-positive" ng-click="myScorecard()">View Scorecard</button>
+			<button style="margin-top: -20px;" class="button button-block button-positive" ng-click="go('app.scorecard')">View Scorecard</button>
 		</div>
 		<div class="centered sub-header">
 			<h3>Movers</h3>

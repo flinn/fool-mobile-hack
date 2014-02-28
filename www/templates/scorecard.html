@@ -1,13 +1,11 @@
-<view title="'<i class=\'icon ion-stats-bars\'></i> My Scorecard'" left-buttons="leftButtons">
+<view title="'<i class=\'icon ion-stats-bars\'></i> My Scorecard'" left-buttons="menuButton">
   <content has-header="true">
     <div ng-repeat="stock in stocks" class="list card">
-
 		  <div class="item item-avatar">
 		    <img src="mcfly.jpg">
 		    <h2>{{ stock.title }}</h2>
 		    <p><a href="#/stock/detail/{{stock.id}}">More Info</a></p>
 		  </div>
-
 		  <div class="item item-body">
 		    <img class="full-image" src="delorean.jpg">
 		    <p>
@@ -18,7 +16,6 @@
 		      <a href="#" class="subdued">5 Comments</a>
 		    </p>
 		  </div>
-
 		  <div class="item tabs tabs-secondary tabs-icon-left">
 		    <a class="tab-item" href="#">
 		      <i class="icon ion-thumbsup"></i>
@@ -33,7 +30,6 @@
 		      Share
 		    </a>
 		  </div>
-
 		</div>
   </content>
 </view>
