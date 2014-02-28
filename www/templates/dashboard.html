@@ -5,24 +5,24 @@
 			<item class="item item-icon-left">
 				<i class="icon ion-arrow-graph-up-right"></i>				
 				1 Day Change	
-				<span class="badge badge-balanced">+0.19%</span>
+				<span class="badge badge-balanced">{{data.one_day_change}}%</span>
 			</item>
 			<item class="item item-icon-left">
 				<i class="icon ion-speedometer"></i>
 	    	Total Value
 	    	<span class="item-note dark">
-		      <b>$2,435.55</b>
+		      <b>${{data.total_value}}</b>
 		    </span>
 			</item>
 			<item class="item item-icon-left">
 				<i class="icon ion-refresh"></i>
 				Total Returns
-				<span class="item-note balanced"><b>45.66%</b></span>
+				<span class="item-note balanced"><b>{{data.returns_total}}%</b></span>
 			</item>
 			<item class="item item-icon-left">
 				<i class="icon ion-shuffle"></i>
 				vs. S&P
-				<span class="item-note balanced"><b>45.23%</b></span>
+				<span class="item-note balanced"><b>{{data.returns_vs_sp}}%</b></span>
 			</item>
 			<item class="item item-icon-left">
 				<i class="icon ion-android-alarm"></i>

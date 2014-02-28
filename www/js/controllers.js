@@ -20,9 +20,10 @@ angular.module('starter.controllers', [])
   }
 
 })
-.controller('DashboardCtrl', function($scope, $state, StockService) {
+.controller('DashboardCtrl', function($scope, $state, StockService, DashboardService) {
 	
   $scope.stocks =  StockService.all();
+  $scope.data = DashboardService.data();
 
 	$scope.myScorecard = function() {
 		$state.go('scorecard');
