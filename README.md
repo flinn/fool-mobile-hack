@@ -15,11 +15,12 @@ Getting Started
 -	npm install -g ionic (if not installed)
 -	gulp install
 
-Documentation
--------------
+Commands
+--------
 
-#### Emulate the App ####
+##### Emulate the App #####
 gulp go - This will run the app in the ripple emulator.
 
 -	[Gulp Documentation](https://github.com/gulpjs/gulp)
 -	[Ionic Documentation](http://ionicframework.com/docs/)
+
