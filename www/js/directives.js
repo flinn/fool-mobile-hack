@@ -2,7 +2,7 @@ angular.module('starter.directives', [])
 
 .directive('card', function() {
 	return {
-		templateUrl: 'templates/stock-card.html';
+		templateUrl: 'templates/stock-card.html'
 	}
 })
 .directive('posNegBadge', function() {
