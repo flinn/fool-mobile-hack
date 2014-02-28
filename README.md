@@ -5,7 +5,9 @@ Requirements
 ------------
 
 -Node
+
 -Ionic Framework (npm install -g ionic)
+
 -Gulp (npm install -g gulp)
 
 Getting Started
