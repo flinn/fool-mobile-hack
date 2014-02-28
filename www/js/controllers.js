@@ -29,8 +29,8 @@ angular.module('starter.controllers', [])
 		$state.go('scorecard');
 	}
 
-  $scope.snapshot  = function(ticker) {
-    $state.go('stock.detail', { stockId: ticker })
+  $scope.snapshot  = function(stockId) {
+    $state.go('stock.detail', { stockId: stockId })
   }
 
 	$scope.onRefresh = function() {
@@ -65,11 +65,9 @@ angular.module('starter.controllers', [])
 
 })
 .controller('StockChartCtrl', function($scope, $stateParams, $state, StockService, pageTitle) {
-  
-  $scope.stock = StockService.get($stateParams.stockId);
 
   $scope.navTitle = pageTitle;
-
+  $scope.stock = StockService.get($stateParams.stockId);
   $scope.leftButtons = [{
       type: 'button-dark',
       content: '<i class="icon ion-stats-bars"></i>',
@@ -80,7 +78,6 @@ angular.module('starter.controllers', [])
 
 })
 .controller('StockNewsCtrl', function($scope, $stateParams, $state, StockService, pageTitle) {
-  
   $scope.stock = StockService.get($stateParams.stockId);
 
   $scope.navTitle = pageTitle;
@@ -95,7 +92,6 @@ angular.module('starter.controllers', [])
 
 })
 .controller('StockCtrl', function($scope, $stateParams, $state, StockService) {
-  
   $scope.stock = StockService.get($stateParams.stockId);
 
   $scope.leftButtons = [{
