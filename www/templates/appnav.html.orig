@@ -13,9 +13,19 @@
         <li class="active visible"><a ng-click="go('app.scorecard')"><i class="fa fa-bar-chart-o scorecard"></i><span>Scorecard</span></a></li>
         <li class="active visible"><a ng-click="go('app.tradealerts')"><i class="fa fa-exclamation-circle trade"></i><span>Trade Alerts</span></a></li>
         <li class="active visible"><a ng-click="go('app.news')"><i class="fa fa-file-text news"></i><span>News</span></a></li>
-        <li class="active visible"><a ng-click="go('app.settings')"><i class="icon ion-gear-b"></i><span>Settings</span></a></li>
         <li class="active visible menu-last"><a ng-click="go('login')"><i class="fa fa-unlock-alt"></i><span>Logout</span></a></li>
       </ul>
     </div>
+<<<<<<< HEAD
+=======
+    <ul class="ulMenu">
+      <li class="active visible"><a ng-click="go('app.dashboard')"><i class="fa fa-home"></i><span>Home</span></a></li>
+      <li class="active visible"><a ng-click="go('app.scorecard')"><i class="fa fa-bar-chart-o"></i><span>Scorecard</span></a></li>
+      <li class="active visible"><a ng-click="go('app.alerts')"><i class="fa fa-bell"></i><span>Alerts</span></a></li>
+      <li class="active visible"><a ng-click="go('app.news')"><i class="fa fa-file-text-o"></i><span>News</span></a></li>
+      <li class="active visible"><a ng-click="go('app.settings')"><i class="icon ion-gear-b"></i><span>Settings</span></a></li>
+      <li class="active visible"><a ng-click="go('login')"><i class="fa fa-unlock-alt"></i><span>Logout</span></a></li>
+    </ul>
+>>>>>>> 7e52daea4b241052f95bd9dfc77eba266dfdef22
   </side-menu>
 </side-menus>
