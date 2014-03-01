@@ -1,0 +1,16 @@
+<view title="'News'" left-buttons="menuButton">
+  <content has-header="true">
+    <div ng-repeat="article in news" class="list card">
+		 <div class="item item-round-header news-header">
+		  </div>
+		  <div class="item item-body">
+		  	<div class="row">
+				  <div class="col centered">
+				  	<span class="focused">{{ article.title }}</span><br/>
+				  	<span class="muted">{{ article.sector }}</span>
+				  </div> 
+				</div>
+		  </div>
+		</div>
+  </content>
+</view>

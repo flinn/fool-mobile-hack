@@ -38,20 +38,24 @@ angular.module('starter.controllers', [])
 	}
 
 })
+.controller('NewsCtrl', function($scope, $state, NewsService) {
+
+  $scope.news = NewsService.all();
+
+})
 .controller('ScorecardCtrl', function($scope, $state, StockService) {
 
   $scope.stocks = StockService.all();
 
-  $scope.leftButtons = [{
-      type: 'button-dark',
-      content: '<i class="icon ion-home"></i>',
-      tap: function(e) {
-      	$state.go('dashboard');
-      }
-  }];
+})
+.controller('TradeAlertCtrl', function($scope, $state, StockService) {
+
+  $scope.stocks = StockService.all();
 
 })
-.controller('StockCtrl', function($scope, $stateParams, $state, StockService) {
+.controller('StockCtrl', function($scope, $stateParams, $state, StockService, navMenu) {
+
+  $scope.menuButton = navMenu;
     
   $scope.stock = StockService.get($stateParams.stockId);
 

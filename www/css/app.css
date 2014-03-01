@@ -1,16 +1,100 @@
-/* Your app's CSS, go crazy, make it your own */
-
-.ionic-logo {
-  display: block;
-  margin: 15px auto;
-  width: 96px;
-  height: 96px;
-}
 
 h1 {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bolder;
 	font-size: 40px;
+}
+
+.white-bg {
+	background-color: #FFF !important;
+}
+
+.card-spacer {
+	margin-bottom: 20px;
+}
+
+.card .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding-top: none;
+}
+
+.card, .list-inset {
+	background: none;
+}
+
+.card-header-icon {
+	margin-top: -10px;
+	border-radius: 25px;
+	padding: 5px 7px;
+	display: inline-block;
+}
+
+.card-header-icon.scorecard {
+	color: White;
+	background-color: #ff9900;
+}
+
+h5.card-header-text {
+	margin-top: 10px;
+	color: #999;
+	font-size: 12px !important;
+	font-family: 'Roboto Condensed';
+	margin-bottom: -5px;
+}
+
+.item-round-header {
+	height: 9px;
+	padding: 0;
+	border-width: 0px;
+	margin:0;
+}
+
+.item-round-header.active {
+	background-color: none;
+}
+
+/*   0C6299   */
+
+.dashboard-header {
+	background-color: #ff9900;   
+}
+
+.dashboard {
+	color: #ff9900;
+}
+
+.trade-header {
+	background-color: #882288;
+}
+
+.trade {
+	color: #882288;
+}
+
+.scorecard-header {
+	background-color: #469D1C;
+}
+
+.scorecard {
+	color: #469D1C;
+}
+
+.news-header {
+	background-color: #0C6299;
+}
+
+.news {
+	color: #0C6299;
+}
+
+.card {
+	margin: 10px 10px;
+}
+
+.dashboard-cards {
+	background-color: none;
+	padding: none;
 }
 
 .sub-header h3 {
@@ -19,12 +103,54 @@ h1 {
 	font-size: 17px;
 }
 
+.dashnote {
+	font-family: 'Roboto';
+	font-size: 100%;
+	font-weight: normal;
+	margin-right: -30px;
+}
+
+.muted {
+	font-size: 10px;
+}
+
+.squared-thumb {
+	height: 100%;
+}
+
 .borderless {
 	border: none !important;
 }
 
+.focused {
+	font-family: Roboto;
+	font-size: 100%;
+	font-weight: bolder;
+}
+
 .centered {
 	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.left {
+	text-align: left;
+}
+
+.stock-header-image {
+	padding: 0px !important;
+	margin-bottom: -5px !important;
+}
+
+.buffer-left {
+	margin-left: 10px;
+}
+
+.buffer-right {
+	margin-right: 10px;
 }
 
 .item.active, .ionic-pseudo .item:active, .item-complex.active .item-content {
@@ -34,25 +160,44 @@ h1 {
 .item-complex .item-content, .item-radio .item-content {
 	padding: 10px 40px 10px 15px;
 }
+
 .button.button-block.button-condensed {
 	margin: 0px;
 }
 
-.nav-logo {
-	margin-top: 80px;
+.bar .button-bar > .button, .bar .buttons > .button {
+	padding: 0px 0px;
+	margin: 0px 0px;
+}
+
+.pull-up-small {
+	margin-top: -10px;
+}
+
+.pull-up {
+	margin-top: -15px;
 }
 
 .nav-jester {
-	padding: 0px 0px !important;
+	padding: 0px 8px !important;
 	margin: 0px 0px !important;
+	color: #FFF;
 	background-image: url(/img/icon.png);
 	background-size: cover;
 }
 
+.body {
+	background-image: url(/img/body.jpg) !important;
+	background-size: cover !important;
+}
+
+.lobby {
+	background-image: url(/img/lobby.png) !important;
+	background-size: cover !important;
+}
+
 body {
   cursor: url('http://ionicframework.com/img/finger.png'), auto;
-  background-image: url('img/body.jpg');
-	background-size: cover;
 }
 
 .text-large {
@@ -60,34 +205,59 @@ body {
 	font-weight: bold;
 }
 
+.menu-box {
+	margin: 0 auto;
+	background-color: #FFF;
+	border-radius:25px;
+	width: 175px;
+}
+
+.menu-logo {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.menu-header {
+	background-color: #f8f8f8;
+}
+
 div.menu {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: #F6F6F6;;
+  position: absolute;
+	margin-left: 25px;
+  height: 100%;
+  width: 100%;
+  background: #F6F6F6;
 }
 
 div.menu ul {
-    width: 600px;
-    list-style: none;
-    margin: 55px 0 0 55px;
-    height: 206px;
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective: 1000;
+  width: 175px;
+  padding: 10px 10px;
+  list-style: none;
+  margin: 50px 0 0 0px;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+
+.menu-first {
+	padding-top: 10px !important;
+}
+
+.menu-last {
+	margin-bottom: 10px !important;
 }
 
 div.menu li {
-    font-weight: 200;
-    font-size: 19px;
-    line-height: 19px;
-    margin-bottom: 28px;
-    -webkit-transition: all 400ms ease-in-out,opacity 1000ms ease;
-    -moz-transition: all 400ms ease-in-out,opacity 1000ms ease;
-    -ms-transition: all 400ms ease-in-out,opacity 1000ms ease;
-    -o-transition: all 400ms ease-in-out,opacity 1000ms ease;
-    transition: all 400ms ease-in-out,opacity 1000ms ease;
-    -webkit-transform: translate3d(-150px,0,0) scale(0.2);
-    opacity: 0;
+  font-weight: 200;
+  font-size: 19px;
+  line-height: 19px;
+  margin-bottom: 28px;
+  -webkit-transition: all 400ms ease-in-out,opacity 1000ms ease;
+  -moz-transition: all 400ms ease-in-out,opacity 1000ms ease;
+  -ms-transition: all 400ms ease-in-out,opacity 1000ms ease;
+  -o-transition: all 400ms ease-in-out,opacity 1000ms ease;
+  transition: all 400ms ease-in-out,opacity 1000ms ease;
+  -webkit-transform: translate3d(-150px,0,0) scale(0.2);
+  opacity: 0;
 }
 
 div.menu li.visible {

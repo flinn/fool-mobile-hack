@@ -29,12 +29,35 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', '
         }
       }
     })
+    .state('app.tradealerts', {
+      url: '/tradealerts',
+      views: {
+        'appContent': {
+          templateUrl: 'templates/trade-alerts.html',
+          controller: 'ScorecardCtrl'
+        }
+      }
+    })
+    .state('app.news', {
+      url: '/news',
+      views: {
+        'appContent': {
+          templateUrl: 'templates/news.html',
+          controller: 'NewsCtrl'
+        }
+      }
+    })
     .state('app.stock', {
       url: '/stock/:stockId',
       views: {
         'appContent': {
           templateUrl: 'templates/stock.html',
-          controller: 'StockCtrl'
+          controller: 'StockCtrl',
+          resolve: { 
+            navMenu: function($rootScope) {
+              return $rootScope.menuButton;
+            }
+          }
         }
       }
     });
@@ -59,7 +82,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', '
   $rootScope.menuButton = [
     {
       type: 'button-dark',
-      content: '<i class="icon ion-navicon nav-jester"></i>',
+      content: '<span class="icon ion-android-arrow-back nav-jester" ></span>',
       tap: function(e) {
         //<i class="icon ion-navicon"></i>
         $rootScope.toggleMenu();

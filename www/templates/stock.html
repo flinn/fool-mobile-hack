@@ -15,22 +15,38 @@
     margin:50px 60px;
     color: white;
     }
+    #container {
+      position: relative;
+    }
+    div.overlay {
+      opacity: .75;
+      background-color: black;
+      position: absolute;
+      left: 0; 
+      top: 0;
+      margin-top: -5px;
+      height: 100%; 
+      width: 100%;
+    }
     </style>
     <view title="stock.title" left-buttons="menuButton">
-      <content has-header="true" has-tabs="false" padding="true">
-        <div class="row">
-          <img style="width:100%" src="img/company_bg.png"/>
+      <content has-header="true" has-tabs="false">
+        <div class="row stock-header-image">
+          <div id="container">
+            <div class="overlay"></div>
+            <img style="width:100%" src="{{ stock.bg_image }}"/>
+          </div>
           <div class="hack">
             <h1>{{ stock.symbol }}</h1>
           </div>
         </div>
         <div class="row">
           <p>{{ stock.description }}</p>
-      </div>
-      <div class="row">
-        {{stock.exchange}}:{{stock.symbol}}
-      </div>
-      <div class="row">
+        </div>
+        <div class="row">
+          {{stock.exchange}}:{{stock.symbol}}
+        </div>
+        <div class="row">
         <div class="col col-50">
           {{ stock.current_price | currency:"$" }}
         </div>
@@ -38,18 +54,18 @@
           <pos-neg-percent value="{{stock.daily_change}}"></pos-neg-percent>
         </div>
       </div>
-      </content>
-    </view>
+    </content>
+  </view>
   </tab>
   <tab icon="icon padding-top ion-android-book" ng-click="chart({{stockId}})">    
-    <view title="stock.title" left-buttons="leftButtons">
+    <view title="stock.title" left-buttons="menuButton">
       <content has-header="true" has-tabs="false" padding="true">
         <h1>{{ stock.symbol }} News:</h1>
       </content>
     </view>
   </tab>
-  <tab icon="icon padding-top ion-pie-graph" ng-click="chart({{stockId}})"   
-    <view title="stock.title" left-buttons="leftButtons">
+  <tab icon="icon padding-top ion-pie-graph" ng-click="chart({{stockId}})">
+    <view title="stock.title" left-buttons="menuButton">
       <content has-header="true" has-tabs="false" padding="true">
         <h1>{{ stock.symbol }} Charts!</h1>
 

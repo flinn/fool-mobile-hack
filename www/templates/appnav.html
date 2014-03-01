@@ -2,17 +2,19 @@
   <pane side-menu-content drag-content="false">
     <nav-bar type="bar-dark" animation="nav-title-slide-ios7"></nav-bar>
     <nav-view name="appContent"></nav-view>
-  </pane> 
-  <side-menu side="right" ng-click="sideMenuClick()">
-    <div class="centered">
-      <img class="nav-logo" src="img/fool-large-logo.png">
+  </pane>
+  <side-menu side="right" ng-click="sideMenuClick()" class="lobby">
+    <div class="centered menu-header">
+      <img class="menu-logo" src="img/fool-large-logo.png">
     </div>
-    <ul class="ulMenu">
-      <li class="active visible"><a ng-click="go('app.dashboard')"><i class="fa fa-home"></i><span>Home</span></a></li>
-      <li class="active visible"><a ng-click="go('app.scorecard')"><i class="fa fa-bar-chart-o"></i><span>Scorecard</span></a></li>
-      <li class="active visible"><a ng-click="go('app.alerts')"><i class="fa fa-bell"></i><span>Alerts</span></a></li>
-      <li class="active visible"><a ng-click="go('app.news')"><i class="fa fa-file-text-o"></i><span>News</span></a></li>
-      <li class="active visible"><a ng-click="go('login')"><i class="fa fa-unlock-alt"></i><span>Logout</span></a></li>
-    </ul>
+    <div class="menu-box">
+      <ul class="ulMenu">
+        <li class="active visible menu-first"><a ng-click="go('app.dashboard')"><i class="fa fa-tachometer dashboard"></i><span>Dashboard</span></a></li>
+        <li class="active visible"><a ng-click="go('app.scorecard')"><i class="fa fa-bar-chart-o scorecard"></i><span>Scorecard</span></a></li>
+        <li class="active visible"><a ng-click="go('app.tradealerts')"><i class="fa fa-exclamation-circle trade"></i><span>Trade Alerts</span></a></li>
+        <li class="active visible"><a ng-click="go('app.news')"><i class="fa fa-file-text news"></i><span>News</span></a></li>
+        <li class="active visible menu-last"><a ng-click="go('login')"><i class="fa fa-unlock-alt"></i><span>Logout</span></a></li>
+      </ul>
+    </div>
   </side-menu>
 </side-menus>

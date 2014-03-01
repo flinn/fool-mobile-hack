@@ -1,48 +1,61 @@
 <view title="'Dashboard'" left-buttons="menuButton">
   <content has-header="true" on-refresh="onRefresh()" class="body">
   	<refresher></refresher>
-		<list can-reorder="true">
-			<item class="item item-icon-left">
-				<i class="icon ion-arrow-graph-up-right"></i>				
-				1 Day Change	
-				<pos-neg-badge value="{{data.one_day_change}}"></pos-neg-badge>
+		<list can-reorder="true" class="card dashboard-cards">
+			<div class="item item-round-header dashboard-header">
+		  </div>
+		  <div class="item centered" ng-click="go('app.scorecard')">
+		  	<div class="card-header-icon scorecard"><i class="fa fa-bar-chart-o"></i><br/></div>
+		  	<h5 class="card-header-text">PERFORMANCE</h5>
+		  </div>
+			<item class="item">
+				<b>1 Day Change</b>
+				<pos-neg-percent price="{{data.one_day_price}}" percent="{{data.one_day_change}}" dashnote="true"></pos-neg-percent>
 			</item>
-			<item class="item item-icon-left">
-				<i class="icon ion-speedometer"></i>
-	    	Total Value
-	    	<span class="item-note dark">
-		      <b>${{data.total_value}}</b>
+			<item class="item">
+	    	<b>Total Value</b>
+	    	<span class="item-note dark dashnote">
+		      ${{data.total_value}}
 		    </span>
 			</item>
-			<item class="item item-icon-left">
-				<i class="icon ion-refresh"></i>
-				Total Returns
-				<pos-neg-percent value="{{data.returns_total}}"></pos-neg-percent>
+			<item class="item">
+				<b>Total Returns</b>
+				<pos-neg-percent price="{{data.returns_percent}}" percent="{{data.returns_total}}" dashnote="true"></pos-neg-percent>
 			</item>
-			<item class="item item-icon-left">
-				<i class="icon ion-shuffle"></i>
-				vs. S&P
-				<pos-neg-percent value="{{data.returns_vs_sp}}"></pos-neg-percent>
+			<item class="item">
+				<b>Change vs. S&P</b>
+				<pos-neg-percent price="{{data.vs_sp_percent}}" percent="{{data.returns_vs_sp}}" dashnote="true"></pos-neg-percent>
 			</item>
-			<item class="item item-icon-left">
-				<i class="icon ion-android-alarm"></i>
-				Annualized
-				<pos-neg-percent value="{{data.returns_annualized}}"></pos-neg-percent>
+			<item class="item">
+				<b>Annualized</b>
+				<pos-neg-percent price="{{data.annualized_percent}}" percent="{{data.returns_annualized}}" dashnote="true"></pos-neg-percent>
 			</item>
 		</list>
-		<div class="padding">
-			<button style="margin-top: -20px;" class="button button-block button-positive" ng-click="go('app.scorecard')">View Scorecard</button>
-		</div>
-		<div class="centered sub-header">
-			<h3>Movers</h3>
-		</div>
-		<div class="row padding centered text-large">
-		  <div class="col col-50 balanced"><strong><i class="icon ion-arrow-up-a"></i> Gainers</strong>
+		<div class="row padding centered text-large pull-up">
+		  <div class="col col-50 dark">
+		  	<strong><i class="icon ion-arrow-up-b"></i> Gainers</strong>
 		  	<div class="padding-top" ng-repeat="gainer in stocks|filter:{status:'gainer'}" ><button class="button button-block button-condensed button-balanced text-large" ng-click="snapshot({{gainer.id}})">{{gainer.symbol}}</button></div>
 		  </div>
-		  <div class="col col-50 assertive"><strong><i class="icon ion-arrow-down-a"></i> Losers</strong>
-<div class="padding-top" ng-repeat="gainer in stocks|filter:{status:'loser'}" ><button class="button button-block button-condensed button-assertive text-large" ng-click="snapshot(gainer.id)">{{gainer.symbol}}</button></div>
+		  <div class="col col-50 dark">
+		  	<strong>Losers <i class="icon ion-arrow-down-b"></i></strong>
+				<div class="padding-top" ng-repeat="gainer in stocks|filter:{status:'loser'}" ><button class="button button-block button-condensed button-assertive text-large" ng-click="snapshot(gainer.id)">{{gainer.symbol}}</button></div>
 		  </div>
+		</div>
+		<div class="col col-100">
+			<div class="item item-round-header dashboard-header">
+		  </div>
+		  <div class="item centered" ng-click="go('app.scorecard')">
+		  	<div class="card-header-icon scorecard"><i class="ion-arrow-graph-up-right"></i><br/></div>
+		  	<h5 class="card-header-text">THE MARKET TODAY</h5>
+		  </div>
+		  <div class="item white-bg card-spacer">
+		  	<div class="row">
+		  		<div class="col col-10 centered news focused">DOW</div>
+		  		<div class="col centered muted">16,321.71</div>
+		  		<div class="col col-35 centered buffer-right"><span class="item-note balanced dashnote"><i class="fa fa-arrow-up fa-lg"></i> 59.05 (0.30%)</span></div>
+		  	</div>
+		  	<line-chart></line-chart>
+			</div>
 		</div>
   </content>
 </view>
