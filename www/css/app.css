@@ -5,6 +5,46 @@ h1 {
 	font-size: 40px;
 }
 
+.login-login {
+	position: absolute;
+	bottom: 0px;
+	width: 50%;
+	font-weight: bolder;
+	background-color: #0C6299;
+	color: #FFF;
+	border: none;
+}
+
+.login-signup {
+	position: absolute;
+	bottom: 0px;
+	width: 50%;
+	font-weight: bolder;
+	left: 0px;
+	background-color: #469D1C;
+	color: #FFF;
+	border: none;
+}
+
+.login-or {
+	font-size: 25px;
+	font-family: 'Roboto Condensed';
+	font-weight: bolder;
+	color: #444;
+	display: inline-block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.login-logo {
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+.login-header {
+	background-color: #f8f8f8;
+}
+
 .white-bg {
 	background-color: #FFF !important;
 }
@@ -182,23 +222,28 @@ h5.card-header-text {
 	padding: 0px 8px !important;
 	margin: 0px 0px !important;
 	color: #FFF;
-	background-image: url(/img/icon.png);
+	background-image: url(../img/icon.png);
 	background-size: cover;
 }
 
 .body {
-	background-image: url(/img/body.jpg) !important;
+	background-image: url(../img/body.jpg) !important;
 	background-size: cover !important;
 }
 
 .lobby {
-	background-image: url(/img/lobby.png) !important;
+	background-image: url(../img/lobby.png) !important;
 	background-size: cover !important;
 }
 
-body {
-  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+.conference-room {
+	background-image: url(../img/foolconfroom.png) !important;
+	background-position: center !important;
 }
+
+/*body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}*/
 
 .text-large {
 	font-size: 20px;

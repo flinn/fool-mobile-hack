@@ -38,8 +38,8 @@ angular.module('starter.services', [])
   var news = [
     { id: 0, title: 'This Oil Company is Printing Money', sector: 'Energy, Materials, & Utilities', lead: 'What\'s the quickest way to double an investment these days? EOG Resources thinks it has the answer.', url: 'xyz', author: 'Matthew Dilallo', pubtime: '3/1/2014', comments: 32, likes: 109 },
     { id: 1, title: 'Apple Reports Record-Breaking Weekend iPhone 5c, 5s Sales Numbers', sector: 'Tech & Telecom', lead: 'Today Apple announced it sold 9 million 5s and 5c iPhones in their first weekend on sale, nearly double the 5 million it sold last year over the iPhone 5\'s release weekend.', url: 'xyz', author: 'Matthew Dilallo', pubtime: '2/29/2014', comments: 109, likes: 549 },
-    { id: 2, title: 'Why Newspaper Stocks Are Up Big This Year', sector: 'Newspaper and Journalism', lead: 'The Washington Post, New York Times, and Gannett have all beaten the S&P index performance by a wide margin this year. What is behind the return of newspaper stocks?', url: 'xyz', author: 'Adrian Campos', pubtime: '2/27/2014', comments: 3, likes: 19 },
-    { id: 3, title: 'This Oil Company is Printing Money', sector: 'Energy, Materials, & Utilities', lead: 'What\'s the quickest way to double an investment these days? EOG Resources thinks it has the answer.', url: 'xyz', author: 'Matthew Dilallo', pubtime: '3/1/2014', comments: 32, likes: 109 }
+    { id: 2, title: 'Why Newspaper Stocks Are Up Big This Year', sector: 'Newspaper & Journalism', lead: 'The Washington Post, New York Times, and Gannett have all beaten the S&P index performance by a wide margin this year. What is behind the return of newspaper stocks?', url: 'xyz', author: 'Adrian Campos', pubtime: '2/27/2014', comments: 3, likes: 19 },
+    { id: 3, title: 'The Internet of Things: Our Best Shot at Battling Climate Change', sector: 'Tech & Telecom', lead: 'Alternative energy won\'t reverse the trends of carbon emissions. The biggest change we can make in carbon consumption lies in this technology', url: 'xyz', author: 'Tyler Crowe', pubtime: '3/2/2014', comments: 14, likes: 25 }
   ];
 
   return {

@@ -1,8 +1,8 @@
-<view title="'<img src=\'img\\logo.png\'>'">
-  <content has-header="true" padding="true">
-  	<div class="centered">
-  		<h4>You should probably login now.</h4>
-  	</div>
+<view title="'The Motley Fool'">
+  <content has-header="false" class="conference-room" scroll="false">
+  	<div class="centered login-header">
+      <img class="login-logo" src="img/fool-large-logo.png">
+    </div>
     <list>
 		  <item>
 		    <input type="text" placeholder="Username">
@@ -14,14 +14,13 @@
 		     <label class="checkbox">
 		       <input type="checkbox">
 		     </label>
-		     Agree to terms/privacy policy.
+		     Agree to <a href="#">terms</a> & <a href="#">privacy policy</a>.
 		  </li>		    
 		</list>
-		<button class="button button-full button-positive" ng-click="login()">Login</button>
-		<br/>
-		<div class="centered">
-			<h4>Or perhaps sign up?</h4>
+		<div class="centered padding">
+			<button class="button login-login" ng-click="login()">Login</button>
+			<button class="button login-signup" ng-click="signUp()">Sign Up</button>
 		</div>
-		<button class="button button-full button-balanced" ng-click="signUp()">Sign Up</button>
+		
   </content>
 </view>
