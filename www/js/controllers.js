@@ -9,6 +9,13 @@ angular.module('starter.controllers', [])
   };
   
 })
+.controller('SettingsCtrl', function($scope, $state) {
+  
+  $scope.login = function() {
+    $state.go('app.dashboard');
+  }
+
+})
 .controller('LoginCtrl', function($scope, $state) {
   
   $scope.login = function() {

@@ -29,6 +29,15 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', '
         }
       }
     })
+    .state('app.settings', {
+      url: '/settigs',
+      views: {
+        'appContent': {
+          templateUrl: 'templates/settings.html',
+          controller: 'SettingsCtrl'
+        }
+      }
+    })
     .state('app.stock', {
       url: '/stock/:stockId',
       views: {
