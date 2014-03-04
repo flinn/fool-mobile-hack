@@ -1,23 +1,26 @@
 <view title="'Trade Alerts'" left-buttons="menuButton">
-  <content has-header="true" class="body">
-    <div ng-repeat="stock in stocks" class="list card">
-		 <div class="item item-round-header trade-header">
-		  </div>
-		  <div class="item item-body">
-		  	<div class="row">
-				  <div class="col col-20">
-				  		<img src="{{ stock.thumb_image }}" class="squared-thumb">
-				  </div>
-				  <div class="col left buffer-left">
-				  	<span class="focused">{{ stock.title }}</span><br/>
-				  	<span class="muted">{{ stock.exchange }}:{{ stock.symbol }}</span>
-				  </div>
-				  <div class="col col-27 right">
-				  	<span class="focused">${{ stock.current_price }}</span><br/>
-				  	<pos-neg-percent price="{{stock.price_change}}" percent="{{stock.daily_change}}"></pos-neg-percent>
-				  </div>
-				</div>
-		  </div>
-		</div>
+  <content has-header="true" on-refresh="onRefresh()" class="body">
+  	<refresher></refresher>
+  	<list>
+	    <div ng-repeat="alert in alerts" class="card">
+			 	<div class="item item-round-header trade-header">
+			 	</div>
+			 	<div class="item centered unpadded">
+			  	<div>
+			  		<img src="{{ alert.bg_image }}" style="width: 100%;" />
+			  	</div>
+			  	<div class="rolled-up-header-icon">
+				  	<div class="card-header-icon trade">
+				  		<i class="fa fa-exclamation" style="width: 16px;"></i><br/>
+				  	</div>
+			  	</div>
+			  	<h5 class="card-header-text">{{ alert.service }}</h5>
+			  	<div class="padding">
+				  	<h2 class="trade">{{alert.title}}</h2>			  	
+				  	<p>{{ alert.lead }}</p>
+			  	</div>
+			  </div>
+			</div>
+		</list>
   </content>
 </view>

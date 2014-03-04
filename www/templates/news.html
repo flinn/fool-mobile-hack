@@ -3,13 +3,32 @@
     <div ng-repeat="article in news" class="list card">
 		 <div class="item item-round-header news-header">
 		  </div>
-		  <div class="item item-body">
+		  <div class="item item-body centered">
+		  	<div class="card-header-icon news-header"><i class="fa fa-bolt" style="width: 16px;"></i><br/></div>
+		  	<h5 class="card-header-text">{{ article.sector }}</h5>		  	
 		  	<div class="row">
 				  <div class="col centered">
-				  	<span class="focused">{{ article.title }}</span><br/>
-				  	<span class="muted">{{ article.sector }}</span>
+				  	<span class="focused news">{{ article.title }}</span><br/>
+				  	<span class="news-lead">{{ article.lead }}</span>
+				  	<br/>
+				  	<button class="button button-small news-header" ng-click="goToArticle()">Read More</button>
 				  </div> 
 				</div>
+		  </div>
+		  <div class="item news-footer" style="height: 50px;">		  	
+		  	<div class="row row-top muted" style="margin-top: -20px;">
+		  		<div class="col col-75">
+		  				<img style="height: 35px; width: 35px; float:left;margin-left:-15px;margin-right: 20px; margin-top: 3px;" class="avatar" src="http://g.foolcdn.com/art/ratings/avatars/generic.gif" alt="" title="">	  			  		
+			  			By {{ article.author }}
+			  			<br/>About 20 Minutes Ago
+		  		</div>
+		  		<div class="col right">
+		  			<i class="fa fa-heart fa-1"></i><br/>{{ article.likes }}
+		  		</div>
+		  		<div class="col right">
+		  			<i class="fa fa-comment fa-1"></i><br/>{{ article.comments }}
+		  		</div>
+		  	</div>	    
 		  </div>
 		</div>
   </content>

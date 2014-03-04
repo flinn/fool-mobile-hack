@@ -1,61 +1,34 @@
 <tabs tabs-style="tabs-icon-top" tabs-type="tabs-default">
   
-  <tab icon="icon padding-top ion-eye" ng-click="chart({{stockId}})">    
-    <style>
-    .hack {
-    color:#FFF; 
-    position: absolute;
-    text-align: center;
-    left:0;
-    width: 100%;
-    }
-    .hack h1 {
-    border: 2px solid white;
-    padding:20px;
-    margin:50px 60px;
-    color: white;
-    }
-    #container {
-      position: relative;
-    }
-    div.overlay {
-      opacity: .75;
-      background-color: black;
-      position: absolute;
-      left: 0; 
-      top: 0;
-      margin-top: -5px;
-      height: 100%; 
-      width: 100%;
-    }
-    </style>
+  <tab icon="icon padding-top ion-eye" ng-click="chart({{stockId}})">        
     <view title="stock.title" left-buttons="menuButton">
-      <content has-header="true" has-tabs="false">
-        <div class="row stock-header-image">
-          <div id="container">
-            <div class="overlay"></div>
-            <img style="width:100%" src="{{ stock.bg_image }}"/>
+      <content has-header="true" has-tabs="true">
+        <list>
+          <div class="item item-round-header scorecard-header">
           </div>
-          <div class="hack">
-            <h1>{{ stock.symbol }}</h1>
+          <div class="item centered unpadded">
+            <div>
+              <img src="{{ stock.bg_image }}" style="width: 100%;" />
+            </div>
+            <div class="rolled-up-header-icon">
+              <div class="card-header-icon scorecard-header">
+                <i class="fa fa-info" style="width: 16px;"></i><br/>
+              </div>
+            </div>            
+            <br/>
+            <h5 class="card-header-text">COMPANY INFORMATION</h5>
+            <h1>{{stock.title}}</h1>
+            <p>{{ stock.exchange }}:{{ stock.symbol }}</p>
+            <h2>{{ stock.current_price | currency:"$" }}</h2>            
+            <div class="row">
+              <div class="col">
+                {{ stock.description }}
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <p>{{ stock.description }}</p>
-        </div>
-        <div class="row">
-          {{stock.exchange}}:{{stock.symbol}}
-        </div>
-        <div class="row">
-        <div class="col col-50">
-          {{ stock.current_price | currency:"$" }}
-        </div>
-        <div class="col col-50">
-          <pos-neg-percent value="{{stock.daily_change}}"></pos-neg-percent>
-        </div>
-      </div>
-    </content>
-  </view>
+        </list>
+      </content>
+    </view>
   </tab>
   <tab icon="icon padding-top ion-android-book" ng-click="chart({{stockId}})">    
     <view title="stock.title" left-buttons="menuButton">

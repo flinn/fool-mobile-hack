@@ -34,7 +34,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', '
       views: {
         'appContent': {
           templateUrl: 'templates/trade-alerts.html',
-          controller: 'ScorecardCtrl'
+          controller: 'TradeAlertCtrl'
         }
       }
     })
@@ -65,13 +65,13 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', '
           resolve: { 
             navMenu: function($rootScope) {
               return $rootScope.menuButton;
-            }
+            },
           }
         }
       }
     });
 
-  $urlRouterProvider.otherwise('/app/dashboard');
+  $urlRouterProvider.otherwise('/app/stock/1');
 
 }).run(function($rootScope, $state) {
   $rootScope.toggleMenu = function() {
@@ -83,17 +83,17 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', '
     }
   };
   
-  $rootScope.go = function(path) {
-    console.log('go',path);
-    $state.go(path);
+  $rootScope.go = function(path, obj) {
+    console.log('go',path, obj);
+    $state.go(path, obj);
   };
   
   $rootScope.menuButton = [
     {
-      type: 'button-dark',
-      content: '<span class="icon ion-android-arrow-back nav-jester" ></span>',
+      type: 'button-icon',
+      content: '<i class="icon ion-navicon-round"></i>',
       tap: function(e) {
-        //<i class="icon ion-navicon"></i>
+        //ELVIS NAV: <span class="icon ion-navicon nav-jester"></span>
         $rootScope.toggleMenu();
       }
     }

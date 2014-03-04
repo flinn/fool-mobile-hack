@@ -1,0 +1,28 @@
+<div class="modal">
+  <header class="bar bar-header bar-dark">
+    <h1 class="title">Add Transaction</h1>
+    <button class="button button-dark" ng-click="closeModal()">Cancel</button>
+  </header>
+  <content has-header="true">
+    <list class="list">
+      <item class="item-stacked-label">
+        <input type="text" placeholder="Ticker Symbol">
+      </item>
+      <item class="item-stacked-label">        
+        <input type="text" placeholder="Transaction Type">
+      </item>
+      <item class="item-stacked-label">
+        <input type="text" placeholder="Amount">
+      </item>
+      <item class="item-stacked-label">
+        <input type="text" placeholder="Commission">
+      </item>
+      <item class="item-stacked-label">
+        <input type="text" placeholder="Date">
+      </item>
+      <item class="item-stacked-label">
+        <button class="button button-full scorecard-header" style="color: White" ng-click="closeModal()">Add Transaction</button>
+      </item>
+    </list>
+  </content>
+</div>

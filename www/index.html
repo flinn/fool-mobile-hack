@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Ionic Seed App</title>
-
     <!-- Stizzylez -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -27,15 +26,21 @@
     <script src="lib/js/ionic-angular.js"></script>
     <script src="jsbin/foolmobile.js"></script>
   </head>
-
-  <!-- 
-    'starter' is the name of this angular module (js/app.js)
-  -->
+  <!-- 'starter' is the name of this angular module (js/app.js) -->
   <body ng-app="starter" animation="slide-left-right-ios7">
-    
+    <script type="text/javascript">
+    ionic.Platform.ready(function() {
+      // hide the status bar using the StatusBar plugin
+      try {
+      StatusBar.hide(); 
+      }
+      catch (ex) {
+        console.log('Unable to find the StatusBar plugin!', ex);
+      }
+    });
+    </script>
     <div ng-controller="MainCtrl">       
       <nav-view></nav-view>
     </div>
-    
   </body>
 </html>
